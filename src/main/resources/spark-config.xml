@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- Theme -->
+        <theme>standard</theme>
+
+        <!-- Document encoding -->
+        <encoding>UTF-8</encoding>
+
+        <!-- Protocol for script and stylesheets -->
+        <protocol>https</protocol>
+
+        <!-- Title of the document -->
+        <documentTitle>Lippia Mobile Report</documentTitle>
+
+        <!-- Report name -->
+        <reportName>Mercado Libre Payment Tests</reportName>
+
+        <!-- Enable timeline -->
+        <timelineEnabled>true</timelineEnabled>
+    </configuration>
+</extentreports>

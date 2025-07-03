@@ -1,0 +1,14 @@
+{
+  "platformName": "Android",
+  "deviceName": "${device.name}",
+  "udid": "${udid}",
+  "platformVersion": "${platform.version}",
+  "appPackage": "${appium.appPackage}",
+  "appActivity": "${appium.appActivity}",
+  "automationName": "UiAutomator2",
+  "noReset": true,
+  "avd": "${appium.avd}",
+  "unicodeKeyboard": true,
+  "resetKeyboard": true
+}
+
