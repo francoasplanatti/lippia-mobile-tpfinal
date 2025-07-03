@@ -1,0 +1,24 @@
+{
+  "platformName": "Android",
+  "deviceName": "default_device",
+  "udid": "default_udid",
+  "platformVersion": "11.0",
+  "appPackage": "com.mercadolibre",
+  "appActivity": ".activities.SplashActivity",
+  "automationName": "UiAutomator2",
+  "noReset": true,
+  "avd": "",
+  "unicodeKeyboard": true,
+  "resetKeyboard": true
+}
+
+
+//{
+//  "appium:deviceName": "{{deviceName}}",
+//  "appium:app": "{{app}}",
+//  "platformName": "Android",
+//  "appium:avd": "{{avd}}",
+//  "appium:resetKeyboard": "true",
+//  "appium:unicodeKeyboard": "true",
+//  "appium:automationName": "UiAutomator2"
+//}

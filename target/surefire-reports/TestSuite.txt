@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.819 s <<< FAILURE! - in TestSuite
+com.crowdar.examples.customrunners.CustomMobileRunner.setUpClass  Time elapsed: 0.714 s  <<< FAILURE!
+cucumber.runtime.CucumberException: Couldn't load plugin class: com.crowdar.examples.report.Reporter
+Caused by: java.lang.ClassNotFoundException: com.crowdar.examples.report.Reporter
+

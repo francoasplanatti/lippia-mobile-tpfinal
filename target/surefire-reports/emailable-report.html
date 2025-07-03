@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="7">Lippia Mobile Test Suite</th></tr>
+<tr><td><a href="#t0">Cucumber Tests</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">39</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Lippia Mobile Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Cucumber Tests &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.crowdar.examples.customrunners.CustomMobileRunner</td><td><a href="#m0">setUpClass</a></td><td rowspan="1">1751570579366</td><td rowspan="1">26</td></tr></tbody>
+</table>
+<h2>Cucumber Tests</h2><h3 id="m0">com.crowdar.examples.customrunners.CustomMobileRunner#setUpClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">cucumber.runtime.CucumberException: Couldn&apos;t load plugin class: com.crowdar.examples.report.Reporter
+	at cucumber.runtime.formatter.PluginFactory.loadClass(PluginFactory.java:181)
+	at cucumber.runtime.formatter.PluginFactory.pluginClass(PluginFactory.java:166)
+	at cucumber.runtime.formatter.PluginFactory.getPluginClass(PluginFactory.java:223)
+	at cucumber.runtime.formatter.PluginFactory.isStepDefinitionReporterName(PluginFactory.java:206)
+	at io.cucumber.core.options.RuntimeOptionsBuilder$ParsedPluginData.addPluginName(RuntimeOptionsBuilder.java:213)
+	at io.cucumber.core.options.RuntimeOptionsBuilder.addPluginName(RuntimeOptionsBuilder.java:61)
+	at io.cucumber.core.options.CucumberOptionsAnnotationParser.addPlugins(CucumberOptionsAnnotationParser.java:96)
+	at io.cucumber.core.options.CucumberOptionsAnnotationParser.parse(CucumberOptionsAnnotationParser.java:51)
+	at io.cucumber.testng.TestNGCucumberRunner.&lt;init&gt;(TestNGCucumberRunner.java:57)
+	at cucumber.api.testng.TestNGCucumberRunner.&lt;init&gt;(TestNGCucumberRunner.java:20)
+	at cucumber.api.testng.AbstractTestNGCucumberTests.setUpClass(AbstractTestNGCucumberTests.java:21)
+Caused by: java.lang.ClassNotFoundException: com.crowdar.examples.report.Reporter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at cucumber.runtime.formatter.PluginFactory.loadClass(PluginFactory.java:174)
+	... 38 more
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

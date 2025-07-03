@@ -1,0 +1,185 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>Lippia-mobile-sample-project</artifactId>
+    <url>https://maven.apache.org</url>
+    <packaging>jar</packaging>
+    <name>Lippia-mobile-sample-project</name>
+    <version>1.0.0</version>
+
+    <parent>
+       <groupId>io.lippia</groupId>
+       <artifactId>root</artifactId>
+       <version>3.3.0.2</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.build.timestamp.format>dd-MM-yyyy-HH-mm-ss</maven.build.timestamp.format>
+        <buildIdentifier>lippia_mobile_sample_project_${maven.build.timestamp}</buildIdentifier>
+
+        <device.name>default_device</device.name>
+        <udid>default_udid</udid>
+        <platform.version>11.0</platform.version>
+        <cucumber.runner>testngSecuencial.xml</cucumber.runner>
+        <appium.appPackage>com.mercadolibre</appium.appPackage>
+        <appium.appActivity>.activities.SplashActivity</appium.appActivity>
+
+        <crowdar.projectType>MOBILE_ANDROID</crowdar.projectType>
+        <crowdar.projectType.driverCapabilities.jsonFile>src/main/resources/capabilities/androidCapabilities.json</crowdar.projectType.driverCapabilities.jsonFile>
+        <crowdar.cucumber.filter>@Demo</crowdar.cucumber.filter>
+        <crowdar.driverHub>http://127.0.0.1:4723/</crowdar.driverHub>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>APK</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <crowdar.driverHub>http://127.0.0.1:4723/</crowdar.driverHub>
+                <cucumber.runner>testngSecuencial.xml</cucumber.runner>
+                <crowdar.avd>Small_Phone</crowdar.avd>
+                <crowdar.app>com.mercadolibre</crowdar.app>
+                <crowdar.appLocation>F:\\\\Documentos\\\\Crowdar Academy\\\\Git Test\\\\lippia-mobile-sample-project\\\\sample_apk\\\\lippia.apk</crowdar.appLocation>
+                <crowdar.deviceName>Small_Phone</crowdar.deviceName>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>S10</id>
+            <properties>
+                <device.name>S10+ de Franco</device.name>
+                <udid>R58M77KL0HW</udid>
+                <platform.version>12.0</platform.version>
+                <appium.avd></appium.avd>
+                <cucumber.runner>testngSecuencial.xml</cucumber.runner>
+            </properties>
+        </profile>
+        <profile>
+            <id>Ios</id>
+            <properties>
+                <crowdar.projectType>MOBILE_IOS</crowdar.projectType>
+            </properties>
+        </profile>
+
+		<profile> 
+			<id>secuencial</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<runner>testngSecuencial.xml</runner>
+			</properties>
+		</profile>
+
+		<profile> 
+			<id>parallel</id>
+			<properties>
+				<runner>testngParallel.xml</runner>
+			</properties>
+		</profile>
+    </profiles>
+
+    <dependencies>
+        <dependency>
+                <groupId>io.lippia</groupId>
+                <artifactId>core</artifactId>
+                <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.lippia.report</groupId>
+            <artifactId>extentreports-cucumber4-adapter</artifactId>
+            <version>1.1.0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>io.lippia.report</groupId>
+            <artifactId>extentreports-cucumber4-adapter</artifactId>
+            <version>1.1.0.12</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>7.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.0.9</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <includes>
+                    <include>**/*.feature</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </testResource>
+        </testResources>
+        <filters>
+            <filter>src/main/resources/cucumber.properties</filter>
+        </filters>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testngSecuencial.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <systemProperties>
+                        <property>
+                            <name>crowdar.projectType</name>
+                            <value>MOBILE_ANDROID</value>
+                        </property>
+                        <property>
+                            <name>env</name>
+                            <value>local</value>
+                        </property>
+                    </systemProperties>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.30</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+		<repository>
+			<id>crowdarRepo</id>
+			<name>crowdar-repository</name>
+			<url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
+		</repository>
+	</repositories>
+
+</project>

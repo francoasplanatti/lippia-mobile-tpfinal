@@ -1,0 +1,4 @@
+# Created at 2025-07-03T16:22:58.287
+Boot Manifest-JAR contains absolute paths in classpath 'F:\Documentos\Crowdar Academy\Git\lippia-mobile-sample-project\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+
